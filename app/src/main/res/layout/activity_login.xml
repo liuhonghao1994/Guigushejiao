@@ -5,6 +5,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="#ffffff"
              >
 
     <TextView
@@ -38,13 +39,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="注册"
-            android:id="@+id/login_btn_register"/>
+            android:id="@+id/login_btn_register"
+            android:background="@drawable/zhuce_bg"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="登录"
-            android:id="@+id/login_btn_login"/>
+            android:id="@+id/login_btn_login"
+            android:background="@drawable/zhuce_bg"/>
     </LinearLayout>
 </LinearLayout>

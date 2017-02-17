@@ -5,6 +5,8 @@ package custome.atguigu.com.guigushejiao.utils;
  */
 
 public class Contacts {
+    //邀请信息状态
     public static final String NEW_INVITE_CHAGED = "new_invite_chaged";
+    //联系人状态
     public static final String CONTACT_CHANGED = "contact_changed";
 }

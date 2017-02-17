@@ -59,4 +59,8 @@ public class Model {
     public AccountDao getAccountDao() {
         return  accountDao;
     }
+
+    public DBManager getDbManager() {
+        return manager;
+    }
 }

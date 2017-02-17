@@ -26,7 +26,7 @@
     <Button
         android:text=""
         android:id="@+id/settings_btn_logout"
-        android:background="@android:color/holo_red_dark"
+        android:background="@drawable/tuichu_bg"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 </LinearLayout>

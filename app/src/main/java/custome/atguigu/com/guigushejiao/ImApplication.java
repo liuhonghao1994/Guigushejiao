@@ -17,6 +17,7 @@ public class ImApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        context=this;
         //初始化环信
         initHXSdk();
         //初始化Modle

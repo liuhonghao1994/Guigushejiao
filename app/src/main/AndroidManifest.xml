@@ -65,6 +65,8 @@
 
         <activity android:name=".controller.avtivity.AddContactActivity">
         </activity>
+        <activity android:name=".controller.avtivity.InviteMessageActivity">
+        </activity>
     </application>
 
 </manifest>

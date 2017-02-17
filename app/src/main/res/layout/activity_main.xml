@@ -25,16 +25,19 @@
             android:id="@+id/rb_main_chat"
             android:checked="true"
             style="@style/MainButtonStyle"
-            android:text="会话" />
+            android:text="会话"
+            android:background="@drawable/button_bg"/>
 
         <RadioButton
             android:id="@+id/rb_main_contact"
             android:text="联系人"
-            style="@style/MainButtonStyle" />
+            style="@style/MainButtonStyle"
+            android:background="@drawable/button_bg"/>
 
         <RadioButton
             android:id="@+id/rb_main_setting"
             android:text="设置"
-            style="@style/MainButtonStyle" />
+            style="@style/MainButtonStyle"
+            android:background="@drawable/button_bg"/>
     </RadioGroup>
 </LinearLayout>

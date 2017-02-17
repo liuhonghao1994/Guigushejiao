@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,6 +14,7 @@ import com.hyphenate.easeui.ui.EaseContactListFragment;
 
 import custome.atguigu.com.guigushejiao.R;
 import custome.atguigu.com.guigushejiao.controller.avtivity.AddContactActivity;
+import custome.atguigu.com.guigushejiao.controller.avtivity.InviteMessageActivity;
 import custome.atguigu.com.guigushejiao.utils.Contacts;
 import custome.atguigu.com.guigushejiao.utils.ShowToast;
 import custome.atguigu.com.guigushejiao.utils.SpUtils;
@@ -42,6 +44,12 @@ public class ContactListFragment extends EaseContactListFragment {
         ll_groups= (LinearLayout) view.findViewById(R.id.ll_groups);
         reddot= (ImageView) view.findViewById(R.id.contanct_iv_invite);
         listView.addHeaderView(view);
+        //初始化小红点
+        changeDot();
+        //获取广播监听
+        LocalBroadcastManager lm=LocalBroadcastManager.getInstance(getActivity());
+
+        lm.registerReceiver(notifyReceiver,new IntentFilter(Contacts.NEW_INVITE_CHAGED));
 
     }
 
@@ -56,15 +64,13 @@ public class ContactListFragment extends EaseContactListFragment {
     protected void setUpView() {
         super.setUpView();
         initListener();
-        /*changeDot();*/
-        //获取监听 邀请信息变化
-         lm=LocalBroadcastManager.getInstance(getActivity());
 
-        lm.registerReceiver(notifyReceiver,new IntentFilter(Contacts.NEW_INVITE_CHAGED));
+
     }
-
+    //红点是否显示的方法
     private void changeDot(){
         boolean isRedShow = SpUtils.getInstace().getBoolean(SpUtils.NEW_INVITE, false);
+        Log.e("TGA","11111111111111111111111111111111111111111111"+isRedShow);
         reddot.setVisibility(isRedShow ? View.VISIBLE : View.GONE);
     }
 
@@ -80,7 +86,13 @@ public class ContactListFragment extends EaseContactListFragment {
         ll_new_friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShowToast.show(getActivity(),"woxiangni");
+               //隐藏小红点
+                SpUtils.getInstace().save(SpUtils.NEW_INVITE,false);
+                changeDot();
+                //跳转
+                Intent intent=new Intent(getActivity(),InviteMessageActivity.class);
+                startActivity(intent);
+                //ShowToast.show(getActivity(),"6666666666666666666");
             }
         });
         ll_groups.setOnClickListener(new View.OnClickListener() {

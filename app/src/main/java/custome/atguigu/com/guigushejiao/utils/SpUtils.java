@@ -3,6 +3,8 @@ package custome.atguigu.com.guigushejiao.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.hyphenate.chat.EMClient;
+
 import custome.atguigu.com.guigushejiao.ImApplication;
 
 /**
@@ -18,7 +20,7 @@ public class SpUtils {
     public static SpUtils getInstace(){
 
         if(mSp == null) {
-            mSp = ImApplication.getContext().getSharedPreferences("im",Context.MODE_PRIVATE);
+            mSp = ImApplication.getContext().getSharedPreferences(EMClient.getInstance().getCurrentUser(),Context.MODE_PRIVATE);
         }
 
         return instace;

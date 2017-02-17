@@ -4,22 +4,24 @@
                 android:id="@+id/activity_splash"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/splash_bg"
                 >
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/splash_iv_icon"
-        android:background="@drawable/atguigu_logo"
+        android:background="@drawable/splash_daven"
         android:layout_centerInParent="true"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/splash_iv_icon"
-        android:text="欢迎来到尚硅谷"
+        android:text="欢迎来到德莱联盟"
         android:textSize="26sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="#ffffff"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         android:id="@+id/splash_tv_timer"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:textColor="#ff0000"/>
 
 </RelativeLayout>
