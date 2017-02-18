@@ -25,6 +25,6 @@ public class InvitationTable {
                 +COL_GROUP_NAME +" text,"
                 +COL_GROUP_HXID +" text,"
                 +COL_REASON +" text,"
-                +COL_STATUS +" integer);";//状态
+                +COL_STATUS +" Integer);";//状态
 
 }

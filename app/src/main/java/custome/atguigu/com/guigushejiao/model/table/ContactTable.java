@@ -20,6 +20,6 @@ public class ContactTable {
                 + COL_USER_NAME + " text,"
                 + COL_USER_PHOTO + " text,"
                 + COL_USER_NICK + " text,"
-                + COL_IS_CONTACT + " integer);";
+                + COL_IS_CONTACT + " Integer);";
 
 }

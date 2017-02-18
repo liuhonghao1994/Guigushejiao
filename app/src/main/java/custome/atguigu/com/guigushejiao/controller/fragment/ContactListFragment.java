@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -47,7 +46,7 @@ public class ContactListFragment extends EaseContactListFragment {
         //初始化小红点
         changeDot();
         //获取广播监听
-        LocalBroadcastManager lm=LocalBroadcastManager.getInstance(getActivity());
+         lm=LocalBroadcastManager.getInstance(getActivity());
 
         lm.registerReceiver(notifyReceiver,new IntentFilter(Contacts.NEW_INVITE_CHAGED));
 
@@ -70,7 +69,7 @@ public class ContactListFragment extends EaseContactListFragment {
     //红点是否显示的方法
     private void changeDot(){
         boolean isRedShow = SpUtils.getInstace().getBoolean(SpUtils.NEW_INVITE, false);
-        Log.e("TGA","11111111111111111111111111111111111111111111"+isRedShow);
+
         reddot.setVisibility(isRedShow ? View.VISIBLE : View.GONE);
     }
 

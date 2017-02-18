@@ -64,7 +64,7 @@ public class SettingFragment extends Fragment {
                     @Override
                     public void onSuccess() {
                         //数据库关闭
-
+                        Model.getInstance().exitLog();
 
                         //跳转，结束
                         if(getActivity()==null){

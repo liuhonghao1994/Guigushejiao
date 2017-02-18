@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 
 import custome.atguigu.com.guigushejiao.model.dao.AccountDao;
 import custome.atguigu.com.guigushejiao.model.db.DBManager;
+import custome.atguigu.com.guigushejiao.utils.SpUtils;
 
 /**
  * Created by 刘红豪 on 2017/2/13.
@@ -26,12 +27,12 @@ public class Model {
     public  static Model getInstance(){
         return model;
     }
+
     //初始化Model的方法
     public void init(Context context){
         this.context=context;
         accountDao=new AccountDao(context);
-        //初始化全局监听
-        new GloableListener(context);
+
     }
    /*线程池分为四种，第一种 有多少开启多少
     2.固定大小
@@ -45,7 +46,7 @@ public class Model {
     //登陆成功后的方法
     public void loginSuccess(String currentUser) {
             //启用数据库的管理方法
-        if(manager==null){
+        if(currentUser==null){
             return;
         }
 
@@ -54,6 +55,8 @@ public class Model {
         }
         manager=new DBManager(context,currentUser+".db");
 
+        //初始化全局监听
+         new GloableListener(context);
     }
 
     public AccountDao getAccountDao() {
@@ -62,5 +65,9 @@ public class Model {
 
     public DBManager getDbManager() {
         return manager;
+    }
+
+    public void exitLog() {
+        SpUtils.getInstace().destroy();
     }
 }
